@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#101b2f" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://jobprofitkit-uk.onrender.com/" />
+  <meta property="og:image" content="https://jobprofitkit-uk.onrender.com/JobProfitKit_PRO_Preview.png" />
+  <meta name="description" content="Free UK trades quote builder and job profit calculator. Price materials and labour, check your profit margin, apply VAT when appropriate, and print a professional customer estimate. No account needed." />
+  <meta property="og:title" content="JobProfitKit UK | Free Quote & Profit Calculator" />
+  <meta property="og:description" content="Price the job. Keep the profit. A free quote builder for UK tradespeople." />
+  <title>JobProfitKit UK | Free Quote Builder and Job Profit Calculator</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="payment-config.js"></script>
+  <script defer src="app.js"></script>
+  <script defer src="premium.js"></script>
+</head>
+<body>
+<div id="app">
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="JobProfitKit UK home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 34 34" fill="none"><path d="M4 25L13.5 15.5L20 21L30 9" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.5 9H30V17.5" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span>Job<span class="brand-accent">Profit</span>Kit<span class="brand-uk">UK</span></span>
+    </a>
+    <div class="header-actions">
+      <span class="privacy-label"><span class="status-dot"></span> Free calculator. No login.</span>
+      <a class="header-link" href="#how-it-works">How it works</a><a class="header-link" href="#premium">Optional premium pack</a>
+      <a class="header-button" href="#builder">Build a quote <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow"><span class="sparkle">✦</span> BUILT FOR UK TRADESPEOPLE</p>
+          <h1 id="hero-title">Price the job.<br /><span>Keep the profit.</span></h1>
+          <p class="hero-copy">Stop wondering whether the job actually pays. Build a professional estimate, check your margins and get a client-ready PDF in minutes.</p>
+          <div class="hero-buttons"><a class="btn btn-lime" href="#builder">Start your free estimate <span aria-hidden="true">↗</span></a><a class="subtle-cta" href="#how-it-works">See how it works <span aria-hidden="true">↓</span></a></div>
+          <div class="hero-trust"><span>✓ 100% free</span><span>✓ No account needed</span><span>✓ Works on mobile</span></div>
+        </div>
+        <div class="hero-preview" aria-label="Example estimate and profit preview">
+          <div class="mock-top"><div class="mini-logo">JPK<span>UK</span></div><span class="mock-pill">JOB SNAPSHOT</span></div>
+          <div class="mock-caption">EXAMPLE CUSTOMER ESTIMATE</div>
+          <div class="mock-price">£474<span>.00</span></div>
+          <div class="mock-rule"></div>
+          <div class="mock-row"><span>Materials</span><strong>£135.00</strong></div>
+          <div class="mock-row"><span>Labour</span><strong>£294.00</strong></div>
+          <div class="mock-row"><span>Travel &amp; disposal</span><strong>£45.00</strong></div>
+          <div class="mock-bottom"><div><small>PROJECTED PROFIT</small><strong>£233.00</strong></div><div><small>GROSS MARGIN</small><strong>49.2%</strong></div></div>
+          <div class="mock-note">Illustration only. Use your own costs and rates.</div>
+        </div>
+      </div>
+      <div class="hero-steps"><span>01 / ADD YOUR JOB COSTS</span><span>02 / SEE YOUR PROFIT</span><span>03 / PRINT YOUR ESTIMATE</span></div>
+    </section>
+
+    <section id="builder" class="workspace container" aria-labelledby="workspace-title">
+      <div class="section-heading"><div><p class="eyebrow dark-eyebrow">THE FREE QUOTE STUDIO</p><h2 id="workspace-title">Let's price your next job.</h2><p>Start with the example, or clear it and make it yours. All changes calculate instantly.</p></div><button id="reset" class="ghost-button" type="button">↺ &nbsp; Reset example</button></div>
+      <div id="storage-banner" class="storage-banner" role="status"><span aria-hidden="true">🔒</span><span>Private by design: your quotes stay in this browser. Nothing is uploaded to us. Download a backup if you want to keep a copy.</span></div>
+      <div class="workspace-grid">
+        <div class="workspace-main">
+          <section class="panel" aria-labelledby="job-heading">
+            <div class="panel-heading"><div class="panel-step">01</div><div><h3 id="job-heading">Job details</h3><p>What goes at the top of the customer estimate</p></div></div>
+            <div class="form-grid">
+              <label>Business name <input data-field="business" type="text" maxlength="90" placeholder="e.g. My Trade Business" autocomplete="organization"></label>
+              <label>Customer name <input data-field="customer" type="text" maxlength="90" placeholder="e.g. Jane Smith"></label>
+              <label class="wide">Job / project name <input data-field="job" type="text" maxlength="130" placeholder="e.g. Kitchen worktop repair"></label>
+              <label>Document type <select data-field="docType"><option>Estimate</option><option>Quotation</option></select></label>
+              <label>Reference <input data-field="reference" type="text" maxlength="35" placeholder="e.g. EST-001"></label>
+              <label class="wide">What work is included? <textarea data-field="scope" rows="3" maxlength="1600" placeholder="Describe the agreed scope and important exclusions"></textarea></label>
+            </div>
+          </section>
+          <section class="panel" aria-labelledby="lines-heading">
+            <div class="panel-heading"><div class="panel-step">02</div><div><h3 id="lines-heading">Items &amp; pricing</h3><p>Enter your costs and what you'll charge your customer</p></div></div>
+            <div class="line-labels"><span>ITEM / DESCRIPTION</span><span>QTY</span><span>YOUR UNIT COST</span><span>CHARGE PER UNIT</span><span></span></div>
+            <div id="items" class="items-list"></div>
+            <div class="item-buttons"><button class="secondary-btn" type="button" id="add-item">+ Add item</button><button class="secondary-btn secondary-light" type="button" id="add-labour">+ Add labour</button></div>
+            <p class="hint"><strong>Your unit cost</strong> is what the item actually costs your business, including the value of your own working time. The customer never sees costs or profit figures.</p>
+          </section>
+          <section class="panel" aria-labelledby="adjust-heading">
+            <div class="panel-heading"><div class="panel-step">03</div><div><h3 id="adjust-heading">Final adjustments</h3><p>Fine-tune costs, discount and the customer total</p></div></div>
+            <div class="form-grid three-col">
+              <label>Extra internal costs <span class="field-help">£</span><input data-field="overhead" type="number" inputmode="decimal" min="0" max="100000000" step="0.01" /></label>
+              <label>Discount to customer <span class="field-help">£</span><input data-field="discount" type="number" inputmode="decimal" min="0" max="100000000" step="0.01" /></label>
+              <label>Target gross margin <span class="field-help">%</span><input data-field="target" type="number" inputmode="decimal" min="0" max="95" step="0.5" /></label>
+              <label>VAT to charge <select data-field="vat"><option value="none">Not registered / no VAT charged</option><option value="0">0% VAT (where applicable)</option><option value="5">5% VAT (where applicable)</option><option value="20">20% VAT (standard)</option></select></label>
+              <label>Requested deposit <span class="field-help">%</span><input data-field="deposit" type="number" inputmode="decimal" min="0" max="100" step="1" /></label>
+              <label>Validity <select data-field="valid"><option value="7">7 days</option><option value="14">14 days</option><option value="30">30 days</option><option value="60">60 days</option></select></label>
+            </div>
+            <p class="hint">VAT treatment varies by job. Select a rate only if you're entitled and required to charge it. A 0% rated supply is different from not charging VAT because you're unregistered. <a href="https://www.gov.uk/vat-rates" target="_blank" rel="noopener noreferrer">Check HMRC guidance ↗</a></p>
+          </section>
+          <div class="workflow-bottom"><span id="save-status" aria-live="polite">Ready to work</span><div><button id="export-json" type="button" class="text-button">Download backup</button><button id="export-csv" type="button" class="text-button">Export costs CSV</button></div></div>
+        </div>
+        <aside class="workspace-sidebar" aria-label="Live price and profitability">
+          <div class="results-card">
+            <div class="result-header"><div class="live-dot"></div><span>LIVE JOB SUMMARY</span><span class="result-free">FREE TOOL</span></div>
+            <p class="total-title">Customer total <span>including VAT if charged</span></p>
+            <p id="customer-total" class="customer-total" aria-live="polite">£474.00</p>
+            <div class="total-math"><div><span>Subtotal (ex VAT)</span><strong id="subtotal">£474.00</strong></div><div><span>Discount</span><strong id="discount-out">−£0.00</strong></div><div><span>VAT charged</span><strong id="vat-out">£0.00</strong></div><div class="math-final"><span>Customer total</span><strong id="total-line">£474.00</strong></div></div>
+            <div class="profit-box"><p>YOUR PROJECTED GROSS PROFIT</p><strong id="profit">£233.00</strong><span id="profit-caption">After entered direct and internal costs, before tax</span></div>
+            <div class="margin-row"><span>Gross profit margin</span><strong id="margin">49.2%</strong></div>
+            <div class="progress-track"><div id="margin-fill" class="progress-fill"></div></div>
+            <div class="margin-row margin-sub"><span>Target margin</span><strong id="target-out">35%</strong></div>
+            <div id="target-message" class="target-message" aria-live="polite"></div>
+            <div class="small-metrics"><div><span>Calculated job costs</span><strong id="costs">£241.00</strong></div><div><span>Deposit requested</span><strong id="deposit-out">£94.80</strong></div></div>
+            <div class="result-actions"><button class="btn btn-lime" id="show-quote" type="button">Preview customer estimate <span aria-hidden="true">↗</span></button><button id="copy-summary" class="btn btn-outline" type="button">Copy numbers</button></div>
+            <p class="result-note">Figures are estimates, not guaranteed profit. Check your costs, VAT treatment, scope and quote terms before sending.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+
+    <section id="premium" class="premium-section container" aria-labelledby="premium-title">
+      <div class="premium-panel">
+        <div class="premium-description">
+          <p class="eyebrow">OPTIONAL DOWNLOAD</p>
+          <h2 id="premium-title">Your whole trade business desk. One price.</h2>
+          <p>The free calculator above stays free. The optional Premium Workbook now includes a BONUS JobProfitKit PRO v2 offline business app, helping you manage customers, quotes, jobs, invoices and payments in one place. Both are delivered together by email after verified payment.</p>
+          <ul class="premium-features">
+            <li>NEW: Phone-friendly, single-file PRO app with customer records and job board</li>
+            <li>NEW: Quotes you can turn into jobs and invoices, plus printable customer PDFs</li>
+            <li>NEW: Smart Quote Coach, profit warnings and AI-ready quote-writing briefs</li>
+            <li>NEW: Partial-payment and overdue balance tracking, local backup and CSV export</li>
+            <li>BONUS: Quality-checked Excel workbook with quote, job and payment trackers</li>
+          </ul>
+          <p class="premium-small">PRO is a standalone HTML file you open in a browser. The Excel workbook requires compatible spreadsheet software. Data stays on your device, with manual backup. Smart checks use transparent calculations; the AI prompts work with a separate AI service if you choose. No cloud sync, automatic bank connection or automatic customer messaging. Not accounting software, HMRC-recognised MTD software or professional advice.</p><div style="margin:20px 0"><img loading="lazy" src="JobProfitKit_PRO_Preview.png" alt="JobProfitKit PRO dashboard showing fictional sample invoices and quotes" style="display:block;width:100%;border-radius:14px;border:1px solid #dbe7e7;box-shadow:0 9px 26px #172b351a"><small style="display:block;color:#607380;margin-top:8px">Actual product screenshot with fictional sample data. The app opens locally in your browser.</small></div>
+        </div>
+        <div class="premium-checkout">
+          <p class="premium-checkout-eyebrow">ONE-OFF PURCHASE</p>
+          <strong class="premium-price">£9.99</strong>
+          <p class="premium-description-text">JobProfitKit UK Premium Workbook + BONUS PRO v2 app</p><p class="premium-small">Sold by Craig Robertson, sole trader trading as CR Surface Solutions (JobProfitKit UK). You will receive a ZIP bundle containing the PRO HTML app and Excel (.xlsx) workbook by email after manual payment verification, usually within 24 hours of confirmation. There is no instant download and no automatic email delivery. <a href="terms.html">Read terms and cancellations</a>.</p>
+          <div id="premium-preflight" hidden style="margin:14px 0; font-size:13px; line-height:1.5;">
+            <p><strong>Before paying, please confirm:</strong></p>
+            <label style="display:flex; align-items:flex-start; gap:9px; margin:10px 0; cursor:pointer;"><input id="premium-check-delivery" type="checkbox" style="margin-top:4px; min-width:16px; min-height:16px;" /> <span>I understand this is a <strong>manual email delivery</strong>, not an instant download. After paying I must email my payment details and delivery email address. The ZIP bundle will normally arrive within 24 hours after Monzo payment confirmation.</span></label>
+            <label style="display:flex; align-items:flex-start; gap:9px; margin:10px 0; cursor:pointer;"><input id="premium-check-consent" type="checkbox" style="margin-top:4px; min-width:16px; min-height:16px;" /> <span>I have read the <a href="terms.html" target="_blank" rel="noopener noreferrer">terms and cancellation information</a>. I request early supply during the 14-day cancellation period and acknowledge that my change-of-mind cancellation right will end once supply begins. Rights for faulty digital content remain.</span></label>
+            <p style="opacity:.8;">You must email these confirmations to the seller after paying so that delivery can begin.</p>
+          </div>
+          <a id="premium-pay-link" class="btn btn-lime premium-payment-button" href="#" target="_blank" rel="noopener noreferrer" hidden>Pay using Monzo link ↗</a>
+          <p class="premium-small">Questions? Email <a href="mailto:Lothianlocalconnect@outlook.com">Lothianlocalconnect@outlook.com</a>.</p><div id="premium-not-live" class="premium-unavailable" role="status">Paid checkout is temporarily unavailable on this device. The free calculator remains available. Contact the seller for help.</div>
+          <div id="premium-delivery" class="premium-fulfilment" hidden>
+            <strong>Digital delivery by email after payment verification. Not an instant download.</strong>
+            <p><strong>Step 2: Send your delivery details.</strong> After paying, <a id="premium-email-link" href="#">email the seller</a> with the name and date of your payment and the email address where you want the workbook delivered. We will check the actual payment in our Monzo Business account before sending your file, normally within 24 hours of confirmation. If we cannot meet this commitment, we will contact you and offer a refund. Do not send your bank passwords, full account details or card numbers.</p>
+            <p>See our <a href="terms.html">terms and digital-content cancellation information</a> before ordering. We do not rely on screenshots as proof of payment. Monzo may take up to 24 hours or longer in exceptional circumstances to settle a transfer.</p>
+          </div>
+          <p class="premium-small">Monzo easy bank transfers are available for UK bank accounts. No card checkout is offered. Before authorising any bank transfer, confirm that Monzo shows £9.99 for JobProfitKit UK Premium Workbook and that the recipient is CR Surface Solutions. If anything differs, do not pay and email us.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="explainer container" aria-labelledby="explainer-title">
+      <div class="explainer-heading"><p class="eyebrow dark-eyebrow">SIMPLE, NOT SIMPLISTIC</p><h2 id="explainer-title">Know your numbers before you quote.</h2><p>Making money on a job is not the same as putting a markup on materials.</p></div>
+      <div class="explainer-grid"><article><div class="explainer-icon">01</div><h3>Enter the real costs</h3><p>Include materials, labour, travel, equipment and your own time. Add any job-specific overhead you need to cover.</p></article><article><div class="explainer-icon">02</div><h3>Check the margin</h3><p>We calculate projected profit and gross margin using the price excluding any VAT charged. A 30% markup is not a 30% margin.</p></article><article><div class="explainer-icon">03</div><h3>Send a tidy estimate</h3><p>Preview a client-friendly document without exposing your costs, then print or save it as PDF using your browser.</p></article></div>
+    </section>
+    <section class="faq container" aria-labelledby="faq-title"><div><p class="eyebrow dark-eyebrow">THE IMPORTANT BITS</p><h2 id="faq-title">Frequently asked questions</h2></div><div class="faq-answers"><details><summary>What's the difference between markup and margin?</summary><p>Markup is profit divided by cost. Margin is profit divided by selling price (excluding VAT). If a job costs £100 and you charge £130, markup is 30%, but margin is about 23.1%.</p></details><details><summary>Is this tool genuinely free?</summary><p>Yes. Building, saving and printing a customer estimate is free and requires no login. The optional £9.99 Premium Workbook bundle below also includes a PRO browser app.</p></details><details><summary>Where are my quotes saved?</summary><p>Only in your own browser's local storage. Nothing is uploaded to a server. Your data could disappear if you clear browser storage or use private browsing. Use “Download backup” for a portable copy.</p></details><details><summary>Can I use this as an official invoice or tax calculation?</summary><p>No. This is a costing and estimate tool, not accounting software, a tax return, an invoice system or legal advice. Confirm the correct VAT and any other tax obligations with HMRC or a qualified professional.</p></details></div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">↗</span><span>Job<span class="brand-accent">Profit</span>Kit<span class="brand-uk">UK</span></span></a><div><p>Built for people who do the work.</p><small>Independent free calculator. Not affiliated with HMRC. © <span id="year"></span> JobProfitKit UK.</small><p style="font-size:13px;opacity:.88;line-height:1.8"><a href="about.html">About &amp; contact</a> &nbsp; · &nbsp; <a href="terms.html">Terms &amp; refunds</a> &nbsp; · &nbsp; <a href="privacy.html">Privacy</a></p></div><a href="#top">Back to top ↑</a></div></footer>
+</div>
+
+<div id="preview-overlay" class="preview-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="preview-title"><div class="preview-shell"><div class="preview-toolbar"><div><strong id="preview-title">Customer estimate preview</strong><small>Private costs and profit are excluded.</small></div><div><button class="secondary-btn" type="button" id="print-quote">Print / Save PDF</button><button class="close-btn" type="button" id="close-preview" aria-label="Close preview">×</button></div></div><div id="customer-document" class="customer-document"></div></div></div>
+<div id="print-only"></div>
+<div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
